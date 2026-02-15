@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>幫我加菜吧 Feed Me — Chloe🍙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: #f0f4f8;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 1.25rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    max-width: 420px;
+    width: 100%;
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+    align-self: flex-start;
+  }
+
+  /* Profile */
+  .avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #e0ecff;
+    margin-bottom: 0.75rem;
+    background: #dce6f5;
+  }
+
+  .name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Message */
+  .message {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Socials */
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #f0f4f8;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .socials a:hover {
+    background: #dce6f5;
+    transform: scale(1.1);
+  }
+
+  .socials svg {
+    width: 22px;
+    height: 22px;
+    fill: #444;
+  }
+
+  /* Support buttons */
+  .support-btns {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    flex: 1;
+    padding: 0.85rem 1rem;
+    border-radius: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  .btn-world {
+    background: #4a9eff;
+    color: #fff;
+  }
+
+  .btn-tw {
+    background: #fff;
+    color: #4a9eff;
+    border: 2px solid #4a9eff;
+  }
+
+  /* Bank info panel */
+  .bank-panel {
+    display: none;
+    background: #f7faff;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    border: 1px solid #dce6f5;
+  }
+
+  .bank-panel.open { display: block; }
+
+  .bank-row {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+  }
+
+  .bank-row strong { color: #333; }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.85rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: 1.5px solid #4a9eff;
+    background: #fff;
+    color: #4a9eff;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .copy-btn:hover { background: #eef4ff; }
+
+  .divider {
+    border: none;
+    border-top: 1px dashed #dce6f5;
+    margin: 0.85rem 0;
+  }
+
+  .fun-prices {
+    list-style: none;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  .fun-prices li {
+    padding: 0.25rem 0;
+  }
+
+  .fun-prices li span {
+    font-weight: 700;
+    color: #4a9eff;
+    margin-right: 0.25rem;
+  }
+
+  /* Footer */
+  .footer {
+    font-size: 0.85rem;
+    color: #999;
+  }
+
+  .footer .heart {
+    color: #f47;
+    font-size: 1.1rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <img class="avatar" src="profile.png" alt="Chloe" onerror="this.style.background='#dce6f5';this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22/>'" />
+  <div class="name">Chloe🍙</div>
+
+  <p class="message">
+    感謝你的支持！贊助後請傳送截圖給我，我會回傳一個專屬小禮物連結 🎁<br>
+    After supporting, send me a screenshot and I'll send you a special gift link!
+  </p>
+
+  <!-- Socials -->
+  <div class="socials">
+    <a href="https://www.youtube.com/@Chloe.standup" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/chloe.riceball" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4a3.9 3.9 0 0 1-1.4-.9c-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1M12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6a5.9 5.9 0 0 0-2.1 1.4A5.9 5.9 0 0 0 .5 4C.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.2 2.2.5 3a5.9 5.9 0 0 0 1.4 2.1c.6.6 1.3 1.1 2.1 1.4.8.3 1.7.5 3 .5 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.2 3-.5a5.9 5.9 0 0 0 2.1-1.4 5.9 5.9 0 0 0 1.4-2.1c.3-.8.5-1.7.5-3 .1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.2-2.2-.5-3a5.9 5.9 0 0 0-1.4-2.1A5.9 5.9 0 0 0 20 .6c-.8-.3-1.7-.5-3-.5C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.8 1.4 1.4 0 0 0 0-2.8z"/></svg>
+    </a>
+  </div>
+
+  <!-- Support buttons -->
+  <div class="support-btns">
+    <a class="btn btn-world" href="https://ko-fi.com/chloericeball" target="_blank" rel="noopener">World 🌏</a>
+    <button class="btn btn-tw" onclick="toggleBank()">Taiwan 🇹🇼</button>
+  </div>
+
+  <!-- Bank info (hidden by default) -->
+  <div class="bank-panel" id="bankPanel">
+    <div class="bank-row"><strong>銀行 Bank：</strong>國泰 Cathay (013)</div>
+    <div class="bank-row"><strong>帳號 Account：</strong>049506117797</div>
+    <button class="copy-btn" onclick="copyAccount()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span id="copyLabel">複製帳號 Copy</span>
+    </button>
+    <hr class="divider">
+    <ul class="fun-prices">
+      <li><span>$95</span> 雞排 chicken cutlet 🍗</li>
+      <li><span>$150</span> 芒果冰 mango shaved ice 🍧</li>
+      <li><span>$250</span> 半筋半肉牛肉麵 beef noodle 🍜</li>
+      <li><span>$1,200</span> 違規停車罰鍰 illegal parking fee 🚗</li>
+      <li><span>$3,600</span> 闖紅燈罰單 red light ticket 🚥</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span class="heart">♥</span> 幫我加菜吧 Feed me
+  </div>
+</div>
+
+<script>
+function toggleBank() {
+  document.getElementById('bankPanel').classList.toggle('open');
+}
+
+function copyAccount() {
+  navigator.clipboard.writeText('049506117797').then(function() {
+    var label = document.getElementById('copyLabel');
+    label.textContent = '已複製 Copied ✓';
+    setTimeout(function() { label.textContent = '複製帳號 Copy'; }, 2000);
+  });
+}
+</script>
+</body>
+</html>
