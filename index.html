@@ -228,12 +228,10 @@
 
   <!-- Bank info (hidden by default) -->
   <div class="bank-panel" id="bankPanel">
-    <div class="bank-row"><strong>銀行 Bank：</strong>國泰 Cathay (013)</div>
-    <div class="bank-row"><strong>帳號 Account：</strong>049506117797</div>
-    <button class="copy-btn" onclick="copyAccount()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      <span id="copyLabel">複製帳號 Copy</span>
-    </button>
+    <div style="text-align: center; margin-bottom: 0.5rem;">
+      <img src="IMG_5631.PNG" alt="LINE Pay QR Code" style="width: 160px; height: 160px; border-radius: 0.5rem;">
+    </div>
+    <div class="bank-row" style="text-align: center;">截圖或長按儲存 QR code → 用 LINE 掃描<br>Save the QR code → scan it with LINE</div>
     <hr class="divider">
     <ul class="fun-prices">
       <li><span>$95</span> 雞排 chicken cutlet 🍗</li>
@@ -254,13 +252,6 @@ function toggleBank() {
   document.getElementById('bankPanel').classList.toggle('open');
 }
 
-function copyAccount() {
-  navigator.clipboard.writeText('049506117797').then(function() {
-    var label = document.getElementById('copyLabel');
-    label.textContent = '已複製 Copied ✓';
-    setTimeout(function() { label.textContent = '複製帳號 Copy'; }, 2000);
-  });
-}
 </script>
 </body>
 </html>
