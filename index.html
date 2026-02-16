@@ -23,6 +23,15 @@
 <meta name="twitter:description" content="Support Chloe🍙 — tip via Ko-fi (worldwide) or LINE Pay (Taiwan). 幫我加菜吧！">
 <meta name="twitter:image" content="https://creativeworks-sketch.github.io/support.me/profile.png">
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1R02FZ54S6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-1R02FZ54S6');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -293,8 +302,16 @@
 <script>
 function toggleBank() {
   document.getElementById('bankPanel').classList.toggle('open');
+  gtag('event', 'click_taiwan_support');
 }
 
+document.querySelector('.btn-world').addEventListener('click', function() {
+  gtag('event', 'click_kofi');
+});
+
+document.querySelector('.back-link').addEventListener('click', function() {
+  gtag('event', 'click_back_to_story');
+});
 </script>
 </body>
 </html>
