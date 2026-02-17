@@ -278,11 +278,11 @@
 
   <!-- Bank info (hidden by default) -->
   <div class="bank-panel" id="bankPanel">
-    <div style="text-align: center; margin-bottom: 0.5rem;">
-      <img src="IMG_5677.PNG" alt="LINE Pay QR Code" style="width: 160px; height: 160px; border-radius: 0.5rem;">
+    <div class="bank-row" style="text-align: center; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;">國泰 Cathay (013)</div>
+    <div style="text-align: center;">
+      <button class="copy-btn" id="copyAccBtn" onclick="copyAccount()">Copy account number 複製帳號</button>
+      <div id="copyMsg" style="font-size: 0.8rem; color: #4a9eff; margin-top: 0.4rem; display: none;">Copied! 已複製</div>
     </div>
-    <div class="bank-row" style="text-align: center;">截圖或長按儲存 QR code → 用 LINE 掃描<br>Save the QR code → scan it with LINE</div>
-    <div class="bank-row" style="text-align: center; font-size: 0.8rem; color: #999; margin-top: 0.5rem;">QR code expires every 24 hrs. If it doesn't work, DM me on <a href="https://www.instagram.com/chloe.riceball" target="_blank" rel="noopener" style="color: #4a9eff; text-decoration: none;">Instagram</a>.<br>QR code 每 24 小時更新一次，如果掃不了，請<a href="https://www.instagram.com/chloe.riceball" target="_blank" rel="noopener" style="color: #4a9eff; text-decoration: none;">私訊我的 Instagram</a>。</div>
     <hr class="divider">
     <ul class="fun-prices">
       <li><span>$95</span> 雞排 chicken cutlet 🍗</li>
@@ -304,6 +304,17 @@
 function toggleBank() {
   document.getElementById('bankPanel').classList.toggle('open');
   gtag('event', 'click_taiwan_support');
+}
+
+function copyAccount() {
+  var d = [52,57,55,55,49,49,54,48,53,57,52,48];
+  var a = d.reverse().map(function(c) { return String.fromCharCode(c); }).join('');
+  navigator.clipboard.writeText(a).then(function() {
+    var msg = document.getElementById('copyMsg');
+    msg.style.display = 'block';
+    setTimeout(function() { msg.style.display = 'none'; }, 2000);
+    gtag('event', 'copy_account_number');
+  });
 }
 
 document.querySelector('.btn-world').addEventListener('click', function() {
